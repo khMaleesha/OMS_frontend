@@ -1,0 +1,44 @@
+<div class="fade-in">
+  <c-row>
+    <c-toaster class="p-3" position="fixed"></c-toaster>
+    <c-col xs="10">
+      <c-card class="mb-6">
+        <c-card-header>
+          <strong>Leave Report</strong>
+        </c-card-header>
+        <c-card-body>
+
+          <form cForm>
+            <c-row [gutter]="3" class="align-items-center">
+              <c-col xs="auto">
+                <label cLabel="col" for=""> Date </label>
+              </c-col>
+              <c-col xs="auto">
+                <input  cFormControl id="date-3" type="date">
+              </c-col>
+
+            </c-row><br>
+            <c-row [gutter]="3" class="align-items-center">
+              <c-col [xs]="6">
+                <div class="form-group">
+                  <label cLabel> Status </label>
+                  <select aria-label="Default select example"  cSelect id="status"
+                    name="status" required>
+                    <option>select ...</option>
+                    <option>Active</option>
+                    <option>Deactivate</option>
+                    <option>Hold</option>
+                  </select>
+                </div>
+              </c-col>
+            </c-row>
+<br>
+            <c-col xs="auto">
+              <button type="submit" cButton>Generate</button>
+            </c-col>
+          </form>
+        </c-card-body>
+      </c-card>
+    </c-col>
+  </c-row>
+</div>

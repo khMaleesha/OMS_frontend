@@ -1,0 +1,60 @@
+<c-card>
+  <c-card-body>
+<table class="table align-middle mb-0 bg-white">
+  <thead class="bg-white">
+    <tr>
+      <th>Employee Number</th>
+      <th>Full name</th>
+      <th>User name</th>
+      <th>Email</th>
+      <th>Status</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr>
+      <td>1</td>
+      <td>
+
+          <div >
+            <p class="fw-bold mb-1">John Doe</p>
+            <p class="text-muted mb-0">john.doe@gmail.com</p>
+          </div>
+
+      </td>
+      <td>
+        <p class="fw-normal mb-1">John</p>
+
+      </td>
+      <td>jone@gmail.com</td>
+
+      <td>Active</td>
+      <td>
+        <button  cButton color="warning"> <img src="assets/img/edit2.png" width="18" height="18"></button>&nbsp;
+            <button  cButton color="danger" (click)="alertConfirmation()"><img src="assets/img/delete2.png" width="18" height="18"></button>
+      </td>
+    </tr>
+
+  </tbody>
+</table><br>
+<c-pagination aria-label="Page navigation example">
+  <li cPageItem>
+    <a cPageLink [routerLink]>Previous</a>
+  </li>
+  <li cPageItem>
+    <a cPageLink [routerLink]>1</a>
+  </li>
+  <li cPageItem>
+    <a cPageLink [routerLink]>2</a>
+  </li>
+  <li cPageItem>
+    <a cPageLink [routerLink]>3</a>
+  </li>
+  <li cPageItem>
+    <a cPageLink [routerLink]>Next</a>
+  </li>
+</c-pagination>
+
+</c-card-body>
+</c-card>

@@ -1,0 +1,257 @@
+<div class="fade-in">
+  <c-row>
+    <c-toaster class="p-4" position="fixed"></c-toaster>
+    <c-col xs="100">
+      <c-card class="mb-6">
+        <c-card-header>
+          <strong>Employee Register </strong>
+        </c-card-header>
+        <c-card-body>
+          <c-col [xs]="6">
+            <c-input-group class="g-1">
+              <span cInputGroupText id="basic-addon1">Employee Number</span>
+              <input aria-label="empname" cFormControl type="text" placeholder="">
+            </c-input-group>
+          </c-col>
+          <hr>
+
+          <form [formGroup]="employeeform" (ngSubmit)="saveEmployee()" [gutter]="3" cForm cRow>
+            <!-- Personal Informations Area -->
+
+            <strong>Personal Informations</strong>&nbsp;
+            <c-row class="g-3">
+              <c-col [xs]="3">
+                <label cLabel> First Name <span class="text-danger">*</span></label>
+                <input aria-label="employeeName" [(ngModel)]="employee.employeeName" cFormControl type="text"
+                  formControlName="employeeName" name="employeeName" id="employeeName">
+                <div class="form-text  text-danger"
+                  *ngIf="employeeName.errors?.['required']  && (employeeName.touched|| employeeName.dirty)">
+                  First Name is Required.
+                </div>
+              </c-col>
+              <c-col [xs]="3">
+                <label cLabel> Second Name <span class="text-danger"></span></label>
+                <input aria-label="secondName" [(ngModel)]="employee.secondName" cFormControl type="text"
+                  formControlName="secondName" name="second_name" id="secondName">
+              </c-col>
+              <c-col [xs]="3">
+                <label cLabel> Surname <span class="text-danger">*</span></label>
+                <input aria-label="surName" [(ngModel)]="employee.surName" cFormControl type="text" id="surName"
+                  name="surName" formControlName="surName">
+                <div class="form-text text-danger" *ngIf="SurName.errors?.['required'] && SurName.touched"> Surname
+                  Required. </div>
+              </c-col>
+              <c-col [xs]="3">
+                <label cLabel> NIC <span class="text-danger">*</span></label>
+                <input aria-label="nic" [(ngModel)]="employee.nic" cFormControl type="text" id="nic" name="nic"
+                  formControlName="nic">
+                <div class="form-text text-danger" *ngIf="Nic.errors?.['required'] && Nic.touched"> NIC
+                  Required.
+                </div>
+                <div class="form-text text-danger" *ngIf="Nic.errors?.['pattern'] && (Nic.dirty|| Nic.touched) "> NIC
+                  Invalid.
+                </div>
+              </c-col>
+            </c-row>
+
+            <c-row class="g-3">
+              <c-col [xs]="3">
+                <label cLabel> Birthday <span class="text-danger">*</span></label>
+                <input cFormControl type="date" [(ngModel)]="employee.birthday" class=" form-control text-center"
+                  id="birthday" name="birthday" formControlName="birthday">
+              </c-col>
+              <c-col [xs]="3">
+                <label cLabel> Blood Group<span class="text-danger">*</span></label>
+                <input aria-label="bloodgroup" cFormControl type="text" [(ngModel)]="employee.bloodGroup"
+                  id="bloodGroup" name="bloodGroup" formControlName="bloodGroup">
+                <div class="form-text text-danger" *ngIf="BloodGroup.errors?.['required'] && BloodGroup.touched "> Blood
+                  Group
+                  Required. </div>
+              </c-col>
+              <c-col [xs]="3">
+                <label cLabel> Department <span class="text-danger">*</span></label>
+                <select aria-label="departmentId" cSelect id="departmentId" [(ngModel)]="employee.departmentId"
+                  name="departmentId" formControlName="departmentId">
+                  <option>Select type..</option>
+                  <option value="1">PC</option>
+                  <option value="2">Laptop</option>
+                </select>
+                <div class="form-text text-danger" *ngIf="Department.errors?.['required'] && Department.touched ">
+                  Department
+                  Required. </div>
+              </c-col>
+              <c-col [xs]="3">
+                <label cLabel> Designation<span class="text-danger">*</span></label>
+                <select aria-label="designationId" cSelect id="designationId" formControlName="designationId"
+                  [(ngModel)]="employee.designationId" name="designationId">
+                  <option>Select type..</option>
+                  <option value="1">Developer</option>
+                  <option value="2">QA Engineer</option>
+                </select>
+              </c-col>
+            </c-row>
+            <c-row class="g-3">
+              <c-col [xs]="3">
+                <div class="mb-3">
+                  <label cLabel>Employee Photo</label>
+                  <input cFormControl id="formFile" type="file" />
+                </div>
+              </c-col>
+              <c-col [xs]="3">
+                <div class="mb-3">
+                  <label cLabel>Employee Catogary</label>
+                  <select aria-label="designation_id" cSelect id="designation_id" formControlName="designation_id">
+                    <option>Select type..</option>
+                    <option value="1">Permanant</option>
+                    <option value="2">Intern</option>
+                    <option value="3">Trainee</option>
+                    <option value="4">Manpower</option>
+                  </select>
+                </div>
+
+              </c-col>
+            </c-row>
+            <c-row class="g-3">
+              <c-col [xs]="4">
+                <label cLabel> Gender: </label> &nbsp;
+                <c-form-check [inline]="true">
+                  <input cFormCheckInput type="radio" value="one1" name="flexRadioDefault1" />
+                  <label cFormCheckLabel>Male</label>
+                </c-form-check>
+                <c-form-check [inline]="true">
+                  <input cFormCheckInput type="radio" value="two1" name="flexRadioDefault1" checked />
+                  <label cFormCheckLabel>Female</label>
+                </c-form-check>
+              </c-col>
+              <c-col [xs]="5">
+                <label cLabel> Marital status: <span class="text-danger"></span></label>&nbsp;
+                <c-form-check [inline]="true">
+                  <input cFormCheckInput type="radio" value="one" name="flexRadioDefault" />
+                  <label cFormCheckLabel>Married</label>
+                </c-form-check>
+                <c-form-check [inline]="true">
+                  <input cFormCheckInput type="radio" value="two" name="flexRadioDefault" checked />
+                  <label cFormCheckLabel>Unmarried</label>
+                </c-form-check>
+              </c-col>
+            </c-row>
+            <hr />
+
+            <!-- Contact Details Area  -->
+
+            <strong>Contact Details</strong>
+            <c-row class="g-3">
+              <c-col [xs]="3">
+                <label cLabel> Mobile Phone <span class="text-danger">*</span></label>
+                <input aria-label="mobile" cFormControl type="text" [(ngModel)]="employee.mobile" id="mobile"
+                  formControlName="mobile">
+                <div class="form-text text-danger"
+                  *ngIf="Mobile.errors?.['required'] && (Mobile.dirty|| Mobile.touched) ">
+                  Mobile
+                  Number Required. </div>
+                <div class="form-text text-danger"
+                  *ngIf="Mobile.errors?.['pattern'] && (Mobile.dirty|| Mobile.touched) "> Mobile
+                  Number is Invalid </div>
+                <div class="form-text text-danger"
+                  *ngIf="Mobile.errors?.['minlength'] && (Mobile.dirty|| Mobile.touched) ">
+                  Mobile
+                  Number is too sort, should be 10 digits </div>
+                <div class="form-text text-danger"
+                  *ngIf="Mobile.errors?.['maxlength'] && (Mobile.dirty|| Mobile.touched) ">
+                  Mobile
+                  Number is too long ,should be 10 digits </div>
+              </c-col>
+              <c-col [xs]="3">
+                <label cLabel> Home Phone </label>
+                <input aria-label="home" cFormControl type="text" id="home" [(ngModel)]="employee.home"
+                  formControlName="home">
+                <div class="form-text text-danger"
+                  *ngIf="HomeTp.errors?.['pattern'] && (HomeTp.dirty|| HomeTp.touched) "> Mobile
+                  Number is Invalid </div>
+                <div class="form-text text-danger"
+                  *ngIf="HomeTp.errors?.['minlength'] && (HomeTp.dirty|| HomeTp.touched) ">
+                  Mobile
+                  Number is too sort, should be 10 digits </div>
+                <div class="form-text text-danger"
+                  *ngIf="HomeTp.errors?.['maxlength'] && (HomeTp.dirty|| HomeTp.touched) ">
+                  Mobile
+                  Number is too long ,should be 10 digits </div>
+              </c-col>
+              <c-col [xs]="3">
+                <label cLabel> Email</label>
+                <input aria-label="email" cFormControl type="text" [(ngModel)]="employee.email" id="email"
+                  formControlName="email">
+                <div class="form-text text-danger" *ngIf="Email.errors?.['email'] && (Email.dirty || Email.touched )">
+                  Email
+                  is Invalid. </div>
+              </c-col>
+              <c-col [xs]="3">
+                <label cLabel for="address">Address<span class="text-danger">*</span></label>
+                <textarea cFormControl id="address" rows="3" formControlName="address" [(ngModel)]="employee.address"
+                  name="address" id="address"></textarea>
+                <div class="form-text text-danger" *ngIf="Address.errors?.['required'] && Address.touched">
+                  Address Required. </div>
+              </c-col>
+            </c-row>
+            <hr />
+
+            <!-- Emergency Contact Informations Area -->
+
+            <strong>Emergency Contact Informations</strong>
+            <c-row class="g-3">
+              <c-col [xs]="3">
+                <label cLabel> Contact Name<span class="text-danger">*</span></label>
+                <input aria-label="emergencyContactname" cFormControl type="text" id="emergencyContactname"
+                  [(ngModel)]="employee.emergencyContactname" formControlName="emergencyContactname">
+                <div class="form-text text-danger" *ngIf="ContactName.errors?.['required'] && ContactName.touched">
+                  Contact
+                  Name Required. </div>
+              </c-col>
+              <c-col [xs]="3">
+                <label cLabel> Mobile Phone <span class="text-danger">*</span></label>
+                <input aria-label="emergencyMobile" cFormControl type="text" id="emergencyMobile"
+                  [(ngModel)]="employee.emergencyMobile" formControlName="emergencyMobile">
+                <div class="form-text text-danger" *ngIf="Emobile.errors?.['required'] && Emobile.touched"> Mobile
+                  Number Required. </div>
+                <div class="form-text text-danger"
+                  *ngIf="Emobile.errors?.['pattern'] && (Emobile.dirty|| Emobile.touched) "> Mobile
+                  Number is Invalid </div>
+                <div class="form-text text-danger"
+                  *ngIf="Emobile.errors?.['minlength'] && (Emobile.dirty|| Emobile.touched) ">
+                  Mobile
+                  Number is too sort, should be 10 digits </div>
+                <div class="form-text text-danger"
+                  *ngIf="Emobile.errors?.['maxlength'] && (Emobile.dirty|| Emobile.touched) ">
+                  Mobile
+                  Number is too long ,should be 10 digits </div>
+              </c-col>
+              <c-col [xs]="3">
+                <label cLabel> Relation<span class="text-danger">*</span></label>
+                <input aria-label="emergencyRelation" cFormControl type="text" id="emergencyRelation"
+                  [(ngModel)]="employee.emergencyRelation" formControlName="emergencyRelation">
+                <div class="form-text text-danger" *ngIf="Relation.errors?.['required'] && Relation.touched"> Relation
+                  Required. </div>
+              </c-col>
+              <c-col [xs]="3">
+                <label cLabel for="address">Address<span class="text-danger">*</span></label>
+                <textarea cFormControl id="emergencyAddress" [(ngModel)]="employee.emergencyAddress" rows="3"
+                  formControlName="emergencyAddress" name="emergencyAddress"
+                  id="emergencyAddress"></textarea>
+                <div class="form-text text-danger" *ngIf="Eaddress.errors?.['required'] && Eaddress.touched">
+                  Address Required. </div>
+              </c-col>
+            </c-row>
+            <hr />
+            <c-row class="g-6">
+              <c-col class="d-flex justify-content-end">
+                <button (click)="saveEmployee()" cButton color="success">submit</button>&nbsp;
+                <button cButton type="reset" cButton color="warning">Reset</button>
+              </c-col>
+            </c-row>
+          </form>
+        </c-card-body>
+      </c-card>
+    </c-col>
+  </c-row>
+</div> 
+

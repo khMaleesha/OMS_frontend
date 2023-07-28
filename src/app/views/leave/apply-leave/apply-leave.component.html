@@ -1,0 +1,86 @@
+<div class="fade-in">
+  <c-row>
+    <c-toaster class="p-3" position="fixed"></c-toaster>
+    <c-col xs="10">
+      <c-card class="mb-6">
+        <c-card-header>
+          <strong>Apply Leave</strong>
+        </c-card-header>
+        <c-card-body>
+          <c-col [xs]="6">
+
+            <c-input-group class="g-3">
+              <span cInputGroupText id="basic-addon1">Employee Number</span>
+              <input aria-label="empname" cFormControl type="text" [(ngModel)]="searchText" placement="right"
+                (keyup.enter)="searchEmploy()" />
+              <button cButton (click)="searchEmploy()" class="cil-search" color="primary">Search</button>
+
+            </c-input-group>
+
+          </c-col>
+          <hr>
+          <c-row class="g-3">
+            <c-col [xs]="6">
+              <label cLabel> Employee Number </label>
+              <input cFormControl disabled type="text" [(ngModel)]="employee.employeeId">
+            </c-col>
+            <c-col [xs]="6">
+              <label cLabel> Employee Name </label>
+              <input cFormControl disabled type="text" [(ngModel)]="employee.employeeName">
+            </c-col>
+          </c-row>
+          <c-row class="g-3">
+            <c-col [xs]="6">
+              <label cLabel> Department </label>
+              <input cFormControl disabled type="text" [(ngModel)]="employee.departmentName">
+            </c-col>
+            <c-col [xs]="6">
+              <label cLabel> Leave Type <span class="text-danger">*</span></label>
+              <select aria-label="Default select example" [(ngModel)]="leave.leaveType" name="leaveType" cSelect>
+                <option><Select></Select>Select type..</option>
+                <option>Annual</option>
+                <option>Casual</option>
+                <option>Half Day</option>
+                <option>Short Leave</option>
+              </select>
+            </c-col>
+          </c-row>
+          <c-row class="g-3">
+            <c-col [xs]="6">
+              <label cLabel> Being Date <span class="text-danger">*</span></label>
+              <input cFormControl type="date" class="form-control text-center" [(ngModel)]="leave.beingDate"
+                name="beingDate" id="beingDate">
+            </c-col>
+            <c-col [xs]="6">
+              <label cLabel> End Date <span class="text-danger">*</span></label>
+              <input cFormControl type="date" class="form-control text-center" [(ngModel)]="leave.endDate"
+                name="endDate" id="endDate">
+            </c-col>
+          </c-row><br>
+          <c-row class="g-3">
+            <c-col [xs]="12">
+              <label cLabel><span class="text-info">Number of level applied for :</span> </label><br>
+              <label cLabel> <span class="text-info"> Applied Date/Time: 4/30/2023, 9.42.24 AM </span> </label>
+            </c-col><br>
+          </c-row>
+          <c-row class="g-3">
+            <c-col [xs]="12">
+              <label cLabel> Purpose <span class="text-danger">*</span></label>
+              <textarea cFormControl id="exampleFormControlTextarea1" rows="3" [(ngModel)]="leave.purpose"
+                name="purpose" id="purpose"></textarea>
+            </c-col>
+          </c-row>
+          <hr />
+          <c-row class="g-6">
+            <c-col class="d-flex justify-content-end">
+              <button cButton (click)="saveLeave()" [disabled]="" class="me-1">Apply</button>
+
+              <button cButton type="reset" color="danger">Clear</button>
+            </c-col>
+          </c-row>
+
+        </c-card-body>
+      </c-card>
+    </c-col>
+  </c-row>
+</div>

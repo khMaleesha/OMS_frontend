@@ -1,0 +1,132 @@
+<c-row>
+  <c-toaster class="p-3" position="fixed"></c-toaster>
+  <c-col xs="100">
+    <c-card class="mb-6">
+      <c-card-header>
+        <strong>Meal Ordering</strong>
+      </c-card-header>
+      <c-card-body>
+        <form (ngSubmit)="onSubmit()" ngNativeValidate>
+
+          <c-col [xs]="6">
+
+            <c-input-group class="g-3">
+              <span cInputGroupText id="basic-addon1">Employee Number</span>
+              <input aria-label="empname" cFormControl type="text" [(ngModel)]="searchText" id="searchText"
+                name="searchText" placement="right" (keyup.enter)="searchEmploy()" />
+              <button cButton (click)="searchEmploy()" class="cil-search" color="primary">Search</button>
+
+            </c-input-group>
+
+
+          </c-col>
+          <hr>
+          <c-row class="g-3">
+            <c-col [xs]="4">
+              <label cLabel> Employee Number </label>
+              <input cFormControl disabled [(ngModel)]="employee.employeeId" id="employeeId" name="employeeId"
+                type="text">
+
+
+
+test
+            </c-col>
+            <c-col [xs]="4">
+              <label cLabel> Employee Name </label>
+              <input cFormControl disabled [(ngModel)]="employee.employeeName" id="employeeName" name="employeeName"
+                type="text">
+            </c-col>
+            <c-col [xs]="4">
+              <label cLabel> Department </label>
+              <input cFormControl disabled [(ngModel)]="employee.departmentName" id="departmentName"
+                name="departmentName" type="text">
+            </c-col>
+          </c-row>
+          <hr>
+          <c-row class="g-4 text-align:center">
+
+
+
+            <label cFormCheckLabel for="checkOne">Meal Type:</label>
+
+            <c-col [xs]="12">
+
+              <c-col [xs]="4">
+
+                <select aria-label="Default select example" cSelect [(ngModel)]="meal.mealType" id="mealType" name="mealType">
+                  <option>select ...</option>
+                  <option value="1">Breakfast</option>
+                  <option value="2">Lunch</option>
+
+                </select>
+              </c-col><br><br>
+            </c-col>
+
+          </c-row><br>
+
+          <c-row class="g-4 text-align:center">
+            <c-col [xs]="3">
+              <c-form-check inline>
+
+                <input cFormCheckInput type="radio" value="vegitarian" name="flexRadioDefault" [(ngModel)]="meal.mealCatogary" />
+
+                <label cFormCheckLabel for="radioinline1">veg</label>
+              </c-form-check>
+            </c-col>
+
+            <c-col [xs]="3">
+              <c-form-check inline>
+                <input cFormCheckInput type="radio" value="Meat" name="flexRadioDefault" [(ngModel)]="meal.mealCatogary" />
+                <label cFormCheckLabel for="radioinline2"></label>
+              </c-form-check>
+            </c-col>
+            <c-col [xs]="3">
+              <c-form-check inline>
+                <input cFormCheckInput type="radio" value="Fish" name="flexRadioDefault" [(ngModel)]="meal.mealCatogary" />
+                <label cFormCheckLabel for="radioinline3"></label>
+              </c-form-check><br>
+            </c-col>
+            <c-col [xs]="3">
+              <c-form-check inline>
+                <input cFormCheckInput type="radio" value="Egg" name="flexRadioDefault" [(ngModel)]="meal.mealCatogary" />
+                <label cFormCheckLabel for="radioinline4"></label>
+              </c-form-check><br>
+            </c-col>
+
+          </c-row>
+          <c-row class="g-4 text-align:center">
+            <c-col [xs]="3">
+
+              <c-form-check [inline]="true">
+                <img src="assets/img/veg2.png" height="200" class="w-8 rounded-4 shadow-5" alt="" />
+              </c-form-check>
+            </c-col>
+            <c-col [xs]="3">
+              <c-form-check [inline]="true">
+                <img src="assets/img/meat.png" height="200" class="w-8 rounded-4 shadow-5" alt="" />
+              </c-form-check>
+            </c-col>
+            <c-col [xs]="3">
+
+              <c-form-check [inline]="true">
+                <img src="assets/img/fish.png" height="200" class="w-8 rounded-4 shadow-5" alt="" />
+              </c-form-check>
+            </c-col>
+            <c-col [xs]="3">
+              <c-form-check [inline]="true">
+                <img src="assets/img/egg.png" height="200" class="w-8 rounded-4 shadow-5" alt="" />
+              </c-form-check>
+            </c-col>
+          </c-row><br>
+          <c-row class="g-6">
+            <c-col class="d-flex justify-content-end">
+              <button class="btn btn-success" type="submit" (click)="saveMeal()">Submit</button>
+              <button cButton color="danger">Clear</button>
+            </c-col>
+          </c-row>
+
+        </form>
+      </c-card-body>
+    </c-card>
+  </c-col>
+</c-row>

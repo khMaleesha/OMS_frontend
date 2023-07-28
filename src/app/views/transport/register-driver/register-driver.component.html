@@ -1,0 +1,156 @@
+<c-card>
+  <c-card-body>
+    <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Edit Department</h4>
+          </div>
+          <c-row class="g-3">
+            <c-row class="g-3">
+              <c-col [xs]="6">
+                <label cLabel>  Name </label>
+                <input cFormControl type="text" [(ngModel)]="text.fullName" id="fullName" name="fullName">
+              </c-col>
+              <c-col [xs]="6">
+                <label cLabel>  NIC </label>
+                <input cFormControl type="text" [(ngModel)]="text.nic" id="nic" name="nic">
+              </c-col>
+            </c-row>
+
+            <c-row class="g-3">
+              <c-col [xs]="6">
+                <label cLabel>  Telephone Number </label>
+                <input cFormControl type="text" [(ngModel)]="text.contact" id="contact" name="contact">
+              </c-col>
+              <c-col [xs]="6">
+                <label cLabel>  Address</label>
+                <input cFormControl type="text" [(ngModel)]="text.address" id="address" name="address">
+              </c-col>
+            </c-row>
+            <c-row class="g-3">
+              <c-col [xs]="6">
+                <label cLabel>  Blood Group </label>
+                <input cFormControl type="text" [(ngModel)]="text.bloodgroup" id="bloodgroup" name="bloodgroup">
+              </c-col>
+              <c-col [xs]="6">
+                <label cLabel> Status </label>
+                <select aria-label="Default select example" cSelect [(ngModel)]="driver.status" id="status" name="status">
+                  <option>select ...</option>
+                  <option >Active</option>
+                  <option >DeActive</option>
+                  <option >Hold</option>
+                </select>
+              </c-col>
+            </c-row>
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-success" (click)="onEditdata()">
+                Submit
+              </button>
+              <button type="button" class="btn btn-danger" (click)="closePopup()">
+                Close
+              </button>
+            </div>
+
+          </c-row>
+        </div>
+      </div>
+    </div>
+
+<c-card>
+  <c-card-body>
+    <p>
+    <button (click)="toggleLiveDemo()" cButton>+ Add Driver</button>
+    </p>
+    <br>
+
+    <table cTable>
+
+      <thead cTableColor="dark">
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col"> Name </th>
+        <th scope="col">NIC</th>
+        <th scope="col">Telephone Number</th>
+        <th scope="col">Address</th>
+        <th scope="col">Blood Group</th>
+        <th scope="col">status</th>
+        <th scope="col">Action</th>
+
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let driver of drivers">
+        <th scope="row">{{driver.driverId}}</th>
+
+        <td>{{driver.fullName}}</td>
+        <td>{{driver.nic}}</td>
+        <td>{{driver.contact}}</td>
+        <td>{{driver.address}}</td>
+        <td>{{driver.bloodGroup}}</td>
+        <td>{{driver.status}}</td>
+        <td><button cButton color="warning" (click)="openPopup(department)">  <img src ="assets/img/edit2.png" width="18" height="18"></button>&nbsp;
+          <button  cButton color="danger" (click)="alertConfirmation()" >  <img src ="assets/img/delete2.png" width="18" height="18"></button> &nbsp;</td>
+
+      </tr>
+
+      </tbody>
+    </table>
+
+    <c-modal id="liveDemoModal" [visible]="visible" alignment="center" (visibleChange)="handleLiveDemoChange($event)">
+      <c-modal-header>
+        <h5 cModalTitle>Add Driver</h5>
+        <button (click)="toggleLiveDemo()" cButtonClose></button>
+      </c-modal-header>
+
+      <c-card-body>
+        <form (ngSubmit)="onSubmit()">
+          <c-row class="g-3">
+            <c-col [xs]="6">
+              <label cLabel>  Name </label>
+              <input cFormControl type="text" [(ngModel)]="driver.fullName" id="fullName" name="fullName">
+            </c-col>
+            <c-col [xs]="6">
+              <label cLabel>  NIC </label>
+              <input cFormControl type="text" [(ngModel)]="driver.nic" id="nic" name="nic">
+            </c-col>
+          </c-row>
+
+          <c-row class="g-3">
+            <c-col [xs]="6">
+              <label cLabel>  Telephone Number </label>
+              <input cFormControl type="text" [(ngModel)]="driver.contact" id="contact" name="contact">
+            </c-col>
+            <c-col [xs]="6">
+              <label cLabel>  Address</label>
+              <input cFormControl type="text" [(ngModel)]="driver.address" id="address" name="address">
+            </c-col>
+          </c-row>
+          <c-row class="g-3">
+            <c-col [xs]="6">
+              <label cLabel>  Blood Group </label>
+              <input cFormControl type="text" [(ngModel)]="driver.bloodGroup" id="bloodGroup" name="bloodGroup">
+            </c-col>
+            <c-col [xs]="6">
+              <label cLabel> Status </label>
+              <select aria-label="Default select example" cSelect [(ngModel)]="driver.status" id="status" name="status">
+                <option>select ...</option>
+                <option >Active</option>
+                <option >DeActive</option>
+                <option >Hold</option>
+              </select>
+            </c-col>
+          </c-row>
+          <c-modal-footer>
+            <button (click)="saveDriver()" cButton color="success">submit</button>&nbsp;
+            <button (click)="toggleLiveDemo()" cButton color="secondary">
+              Close
+            </button>
+          </c-modal-footer>
+        </form>
+      </c-card-body>
+
+    </c-modal>
+  </c-card-body>
+</c-card>

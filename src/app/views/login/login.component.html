@@ -1,0 +1,43 @@
+<div class="fade-in">
+  <!-- <div [ngStyle]="{'background' : 'url(assets/img/logo/MAXIM Logo.png)'}"> -->
+
+  <div class="container">
+      <div class="screen">
+          <div class="screen__content">
+            <!-- <div class="alert alert-warning" *ngIf='invalidLogin'>{{errorMessage}}</div>
+            <div class="alert alert-success" *ngIf='loginSuccess'>{{successMessage}}</div> -->
+              <form CForm class="login" [formGroup]="loginForm" (ngSubmit)="login()">
+                  <strong>
+                      <h4>LOGIN HERE</h4>
+                  </strong>
+                  <div class="login__field">
+
+                      <input autoComplete="username" cFormControl placeholder="Username" formControlName="txt_username" />
+                      <span class="focus-input100"></span>
+                      <span class="symbol-input100">
+                          <!-- <svg-icon src="images/eye.svg" [svgStyle]="{ 'width.px':90 }"></svg-icon> -->
+                      </span>
+                  </div>
+                  <div class="login__field">
+                    <input autoComplete="current-password" cFormControl placeholder="Password" type="password" formControlName="txt_password" />
+                  </div>
+                  <button class="button login__submit">
+                      <span class="button__text ">LOGIN</span>
+
+                  </button><br><br>
+                 <p>  &nbsp;&nbsp; <a href="/html/default.asp">Lost Your Password? </a></p>
+              </form>
+              <div class="social-login">
+                  <img src="assets/img/logo/maxim_logo_1.png" height="150" class="w-8 rounded-4 shadow-5" alt="" />
+              </div>
+          </div>
+          <div class="screen__background">
+              <span class="screen__background__shape screen__background__shape4"></span>
+              <span class="screen__background__shape screen__background__shape3"></span>
+              <span class="screen__background__shape screen__background__shape2"></span>
+              <span class="screen__background__shape screen__background__shape1"></span>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- </div> -->

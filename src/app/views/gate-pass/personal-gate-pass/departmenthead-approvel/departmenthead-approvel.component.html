@@ -1,0 +1,52 @@
+<div class="fade-in">
+  <c-row>
+    <c-toaster class="p-3" position="fixed"></c-toaster>
+    <c-col [lg]="10">
+      <c-card class="mb-6">
+        <c-card-header>
+          <strong>Approve Gate pass</strong>
+        </c-card-header><br>
+        <c-row>
+          <c-col [xs]="9"></c-col>
+          <c-col [xs]="3">
+            <div class="search-department">
+            </div>
+          </c-col>
+        </c-row>
+        <c-card-body>
+
+          <table cTable>
+            <thead cTableColor="dark">
+              <tr>
+                <th scope="col">Reference</th>
+                <th scope="col">Employee Number</th>
+                <th scope="col">Employee Name</th>
+                <th scope="col">Type</th>
+                <th scope="col">Date</th>
+                <th scope="col">Purpose</th>
+                <th scope="col">Status</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let personalgatepass of personalgatepasses| filter: searchDepartment">
+                <th scope="row">{{personalgatepass.personalgatepassId }}</th>
+                <td>{{personalgatepass.employeeId }}</td>
+                <td>{{employee.employeeName }}</td>
+                <td>{{personalgatepass.personalgatepassType }}</td>
+                <td>{{personalgatepass.personalgatepassDate }}</td>
+                <td>{{personalgatepass.purpose }}</td>
+                <td>{{personalgatepass.status=== 0?"Approved":"Pending"}}</td>
+                <td> <button id="button1" cButton class="me-1" color="primary"
+                    (click)="approvegatepass(personalgatepass)">Approved</button></td>
+              </tr>
+              <tr>
+            </tbody>
+          </table>
+        </c-card-body>
+      </c-card>
+    </c-col>
+  </c-row>
+</div><br>
+<c-col>
+</c-col>

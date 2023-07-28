@@ -1,0 +1,47 @@
+<div class="fade-in">
+  <c-row>
+    <c-toaster class="p-3" position="fixed"></c-toaster>
+    <c-col xs="10">
+      <c-card class="mb-6">
+        <c-card-header>
+          <strong>Create Gate pass</strong>
+        </c-card-header>
+        <c-card-body>
+          <form (ngSubmit)="onSubmit()" ngNativeValidate>
+
+            <hr>
+            <c-row class="g-3">
+              <c-col [xs]="6">
+                <label cLabel> Transport Grade <span class="text-danger">*</span></label>
+                <input cFormControl  type="text" [(ngModel)]="transport.grade" id="employeeId" name="employeeId" required>
+              </c-col>
+              <c-col [xs]="6">
+                <label cLabel> Root <span class="text-danger">*</span></label>
+                <input cFormControl  type="text" [(ngModel)]="transport.root" id="employeeName" name="employeeName" required>
+              </c-col>
+            </c-row>
+
+            <c-row class="g-3">
+              <c-col [xs]="6">
+                <label cLabel> Seets <span class="text-danger">*</span></label>
+                <input cFormControl  type="text"  [(ngModel)]="transport.seets" id="departmentName" name="departmentName" required>
+              </c-col>
+              <c-col [xs]="6">
+                <label cLabel> Driver <span class="text-danger">*</span></label>
+                <input cFormControl type="text" class="form-control text-center" [(ngModel)]="transport.driverId" id="personalgatepassDate" name="personalgatepassDate" required
+             >
+              </c-col>
+            </c-row>
+<br>
+            <c-row class="g-6">
+              <c-col class="d-flex justify-content-end">
+                <button cButton (click)="saveTransport()" [disabled]="" class="me-1">Apply</button>
+                <button cButton color="danger">Clear</button>
+              </c-col>
+            </c-row>
+          </form>
+        </c-card-body>
+      </c-card>
+    </c-col>
+  </c-row>
+</div>

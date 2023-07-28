@@ -1,0 +1,75 @@
+<div class="fade-in">
+  <c-row>
+    <c-toaster class="p-3" position="fixed"></c-toaster>
+    <c-col [lg]="10">
+      <c-card class="mb-6">
+        <c-card-header>
+          <strong>Approve Gate pass</strong>
+        </c-card-header>
+        <c-card-body>
+
+          <table cTable>
+            <thead cTableColor="dark">
+              <tr>
+                <th scope="col">Reference</th>
+                <th scope="col">Employee Number</th>
+                <th scope="col">Employee Name</th>
+                <th scope="col">Type</th>
+                <th scope="col">Date</th>
+                <th scope="col">Purpose</th>
+                <th scope="col">Department Head Status</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let personalgatepass of personalgatepasses">
+                <th scope="row">{{personalgatepass.personalgatepassId }}</th>
+                <td>{{personalgatepass.employeeId }}</td>
+                <td>{{employee.employeeName }}</td>
+                <td>{{personalgatepass.personalgatepassType }}</td>
+                <td>{{personalgatepass.personalgatepassDate }}</td>
+                <td>{{personalgatepass.purpose }}</td>
+                <td>{{personalgatepass.status=== 0?"Approved":"Pending" }}</td>
+                <td> <button cButton color="success" class="" (click)="approvegatepass(personalgatepass)">
+                    Approved</button>
+
+                </td>
+              </tr>
+              <tr>
+            </tbody>
+          </table>
+
+        </c-card-body>
+      </c-card>
+    </c-col>
+    <c-col [sm]="2">
+      <c-card class="mb-4 text-center text-white bg-info   ">
+        <c-card-body>
+          <h5 cCardTitle>1</h5>
+          <h5 cCardTitle>Pending</h5>
+        </c-card-body>
+      </c-card>
+    </c-col>
+  </c-row>
+</div><br>
+
+
+<c-col>
+  <c-card [visible]="visible[0]" cCollapse class="mt-3">
+    <c-card-body>
+      <strong> <label cLabel for="inputEmail4">Gate Pass Reference:</label><br></strong>
+      <strong> <label cLabel for="inputEmail4">Employee Number :</label><br></strong>
+      <strong> <label cLabel for="inputEmail4">Employee Name:</label><br></strong>
+      <strong><label cLabel for="inputEmail4">Type:</label><br></strong>
+      <strong> <label cLabel for="inputEmail4">Date:</label><br></strong>
+      <strong><label cLabel for="inputEmail4">Department:</label><br></strong>
+      <strong> <label cLabel for="inputEmail4">Purpose:</label><br></strong>
+
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button id="success" cButton class="me-1" color="success">
+          Approve</button>
+        <button id="clear" cButton class="me-1" color="warning">Clear</button>
+      </div>
+    </c-card-body>
+  </c-card>
+</c-col>

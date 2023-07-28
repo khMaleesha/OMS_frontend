@@ -1,0 +1,28 @@
+<div class="fade-in">
+  <c-row>
+    <c-toaster class="p-3" position="fixed"></c-toaster>
+    <c-col xs="10">
+      <c-card class="mb-6">
+        <c-card-header>
+          <strong>Meal Report</strong>
+        </c-card-header>
+        <c-card-body>
+
+          <form cForm>
+            <c-row [gutter]="3" class="align-items-center">
+              <c-col xs="auto">
+                <label cLabel="col" for=""> Date </label>
+              </c-col>
+              <c-col xs="auto">
+                <input aria-describedby="passwordHelpInline-3" cFormControl id="inputPassword-3" type="date">
+              </c-col>
+              <c-col xs="auto">
+                <button type="submit" cButton>Generate</button>
+              </c-col>
+            </c-row>
+          </form>
+        </c-card-body>
+      </c-card>
+    </c-col>
+  </c-row>
+</div>

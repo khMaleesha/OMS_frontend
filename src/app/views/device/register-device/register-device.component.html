@@ -1,0 +1,184 @@
+<div class="fade-in">
+
+  <c-row>
+    <c-toaster class="p-3" position="fixed"></c-toaster>
+    <c-col xs="100">
+      <c-card class="mb-6">
+        <c-card-header>
+          <strong>Device</strong>
+        </c-card-header>
+        <c-card-body>
+          <form cForm class="row g-3">
+            <c-container>
+              <c-col [xs]="6">
+                <c-input-group class="g-1">
+                  <c-input-group class="g-3">
+                    <span cInputGroupText id="basic-addon1">Employee Number</span>
+                    <input aria-label="empname" cFormControl type="text" [(ngModel)]="searchText" name="searchText"
+                      id="searchText" placement="right" (keyup.enter)="searchEmployee()" />
+                    <button cButton (click)="searchEmployee()" class="cil-search" color="primary">Search</button>
+
+                  </c-input-group>
+
+                </c-input-group>
+              </c-col>
+              <hr>
+              <label cLabel><b> PC/Laptop </b></label><br><br>
+              <c-row>
+                <c-col>
+                  <label cLabel> Employee Number </label>
+                  <input cFormControl disabled type="text" [(ngModel)]="employee.employeeId" id="employeeId"
+                    name="employeeId">
+                </c-col>
+                <c-col>
+                  <label cLabel> Employee Name </label>
+                  <input cFormControl disabled type="text" [(ngModel)]="employee.employeeName" id="employeeName"
+                    name="employeeName">
+                </c-col>
+
+                <c-col>
+                  <label cLabel> Department </label>
+                  <input cFormControl disabled type="text" [(ngModel)]="employee.departmentName" id="departmentId"
+                    name="departmentId">
+                </c-col>
+
+                <c-col>
+                  <label cLabel> Device Type <span class="text-danger"></span></label>
+                  <select aria-label="Default select example" [(ngModel)]="device.deviceType" id="deviceType"
+                    name="deviceType" cSelect>
+                    <option><Select></Select>Select type..</option>
+                    <option>PC</option>
+                    <option>Laptop</option>
+                  </select>
+                </c-col>
+              </c-row>
+
+              <c-row>
+                <c-col>
+                  <label cLabel> Device Brand<span class="text-danger"></span></label>
+                  <input aria-label="empname" cFormControl type="text" [(ngModel)]="device.deviceBrand" id="deviceBrand"
+                    name="deviceBrand">
+                </c-col>
+                <c-col>
+                  <label cLabel> Device Model <span class="text-danger"></span></label>
+                  <input aria-label="empname" cFormControl type="text" [(ngModel)]="device.deviceModel" id="deviceModel"
+                    name="deviceModel">
+                </c-col>
+                <c-col>
+                  <label cLabel> Model Number <span class="text-danger"></span></label>
+                  <input aria-label="empname" cFormControl type="text" [(ngModel)]="device.modelNumber" id="modelNumber"
+                    name="modelNumber">
+                </c-col>
+
+                <c-col>
+                  <label cLabel> Display Model <span class="text-danger"></span></label>
+                  <input aria-label="empname" cFormControl type="text" [(ngModel)]="device.displayModel"
+                    id="displayModel" name="displayModel">
+                </c-col>
+              </c-row>
+              <c-row>
+                <c-col>
+                  <label cLabel> Memory Size<span class="text-danger"></span></label>
+                  <input aria-label="empname" cFormControl type="text" [(ngModel)]="device.memorySize" id="memorySize"
+                    name="memorySize">
+                </c-col>
+                <c-col>
+                  <label cLabel> Hard Disk <span class="text-danger"></span></label>
+                  <input aria-label="empname" cFormControl type="text" [(ngModel)]="device.hardDisk" id="hardDisk"
+                    name="hardDisk">
+                </c-col>
+                <c-col>
+                  <label cLabel> Grapics card Model <span class="text-danger"></span></label>
+                  <input aria-label="graphiccardModel" cFormControl type="text" [(ngModel)]="device.graphiccardModel"
+                    id="graphiccardModel" name="graphiccardModel">
+                </c-col>
+                <c-col>
+                  <label cLabel>Other <span class="text-danger"></span></label>
+                  <input aria-label="empname" cFormControl type="text" [(ngModel)]="device.other" id="other"
+                    name="other">
+                </c-col>
+              </c-row> <br>
+
+              <hr />
+              <label cLabel> <b>Network </b></label><br><br>
+              <c-row>
+                <c-col>
+                  <label cLabel> Network Device <span class="text-danger"></span></label>
+                  <select aria-label="Default select example" [(ngModel)]="device.networkDevice" id="networkDevice"
+                    name="networkDevice" cSelect>
+                    <option><Select></Select>Select type..</option>
+                    <option>Dongle</option>
+                    <option>Pocket Router</option>
+                    <option>Router</option>
+                    <option>Other</option>
+
+                  </select>
+                </c-col>
+                <c-col>
+                  <label cLabel> Service Provider <span class="text-danger"></span></label>
+                  <select aria-label="Default select example" [(ngModel)]="device.serviceProvider" id="serviceProvider"
+                    name="serviceProvider" cSelect>
+                    <option><Select></Select>Select type..</option>
+                    <option>SLT</option>
+                    <option>Mobitel</option>
+                    <option>Dialog</option>
+                    <option>Other</option>
+
+                  </select>
+                </c-col>
+                <c-col>
+                  <label cLabel> Service Number <span class="text-danger"></span></label>
+                  <input aria-label="empname" cFormControl type="text" [(ngModel)]="device.serviceNumber"
+                    id="serviceNumber" name="serviceNumber">
+                </c-col>
+                <c-col>
+                  <label cLabel> Serial Number <span class="text-danger"></span></label>
+                  <input aria-label="empname" cFormControl type="text" [(ngModel)]="device.serialNumber"
+                    id="serialNumber" name="serialNumber">
+                </c-col>
+                <c-col>
+                  <label cLabel> EMEI Number <span class="text-danger"></span></label>
+                  <input aria-label="empname" cFormControl type="text" [(ngModel)]="device.EMEINumber" id="EMEINumber"
+                    name="EMEINumber">
+                </c-col>
+              </c-row>
+              <hr>
+              <label cLabel> <b>Printer </b></label><br><br>
+              <c-row>
+
+                <c-col>
+                  <label cLabel> Brand Name <span class="text-danger"></span></label>
+                  <input aria-label="empname" cFormControl type="text" [(ngModel)]="device.printerbrandName"
+                    id="printerbrandName" name="printerbrandName">
+                </c-col>
+                <c-col>
+                  <label cLabel> Model <span class="text-danger"></span></label>
+                  <input aria-label="empname" cFormControl type="text" [(ngModel)]="device.printerModel"
+                    id="printerModel" name="printerModel">
+                </c-col>
+                <c-col>
+                  <label cLabel> Model Number <span class="text-danger"></span></label>
+                  <input aria-label="empname" cFormControl type="text" [(ngModel)]="device.printermodelNumber"
+                    id="printermodelNumber" name="printermodelNumber">
+                </c-col>
+                <c-col>
+                  <label cLabel> Toner type <span class="text-danger"></span></label>
+                  <input aria-label="empname" cFormControl type="text" [(ngModel)]="device.tonerType" id="tonerType"
+                    name="tonerType">
+                </c-col>
+
+              </c-row>
+              <hr>
+              <c-row class="g-6">
+                <c-col class="d-flex justify-content-end">
+                  <button cButton (click)="saveDevice()" [disabled]="" class="me-1">Apply</button>
+                  <button cButton color="danger">Clear</button>
+                </c-col>
+              </c-row>
+            </c-container>
+          </form>
+        </c-card-body>
+      </c-card>
+    </c-col>
+  </c-row>
+</div>

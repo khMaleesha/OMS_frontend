@@ -1,0 +1,108 @@
+<c-card>
+  <c-card-body>
+    <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Edit Designation</h4>
+          </div>
+          <c-row class="g-3">
+            <c-col [xs]="6">
+              <label cLabel> Designation name </label>
+              <input cFormControl type="text" [(ngModel)]="text.designationName" id="designationName"
+                name="designationName" required>
+            </c-col>
+            <c-col [xs]="6">
+              <label cLabel> Status </label>
+              <select aria-label="Default select example" [(ngModel)]="text.status" cSelect id="status" name="status"
+                required>
+                <option>select ...</option>
+                <option>Active</option>
+                <option>Deactivate</option>
+                <option>Hold</option>
+              </select>
+
+            </c-col>
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-success" (click)="onEditdata()">
+                Submit
+              </button>
+              <button type="button" class="btn btn-danger" (click)="closePopup()">
+                Close
+              </button>
+            </div>
+
+          </c-row>
+        </div>
+      </div>
+    </div>
+    <c-row>
+      <c-col [xs]="9">
+        <button (click)="toggleLiveDemo()" cButton>+ Add Designation</button>&nbsp;
+        <button class="primary" (click)="generateReport()" cButton> <img src="assets/img/excel.png" width="25"
+            height="25"></button>
+      </c-col>
+      <c-col [xs]="3">
+        <div class="search-designation">
+          <input cFormControl type="text" name="serach" [(ngModel)]="searchDesignation" placeholder="search">
+        </div>
+      </c-col>
+    </c-row><br>
+    <table cTable>
+      <thead cTableColor="dark">
+        <tr>
+          <th scope="col">id</th>
+          <th scope="col">Designation </th>
+          <th scope="col">Status</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let designation of designations | filter:searchDesignation ">
+          <th scope="row">{{designation.designationId}}</th>
+          <td>{{designation.designationName}}</td>
+          <td>{{designation.status}}</td>
+
+          <td><button cButton color="warning" (click)="openPopup(designation)">
+              <img src="assets/img/edit2.png" width="18" height="18"></button>&nbsp;
+            <button cButton color="danger" class="btn-delete" (click)="deleteItem(designation)"><img
+                src="assets/img/delete2.png" width="18" height="18"></button> &nbsp;</td>
+        </tr>
+      </tbody>
+    </table>
+    <c-modal id="liveDemoModal" [visible]="visible" alignment="center" (visibleChange)="handleLiveDemoChange($event)">
+      <c-modal-header>
+        <h5 cModalTitle>Add Designation</h5>
+        <button (click)="toggleLiveDemo()" cButtonClose></button>
+      </c-modal-header>
+      <c-card-body>
+        <form (ngSubmit)="onSubmit()" ngNativeValidate>
+          <c-row class="g-3">
+            <c-col [xs]="6">
+              <label cLabel> Designation </label>
+              <input cFormControl type="text" [(ngModel)]="designation.designationName" id="designationName"
+                name="designationName" required>
+            </c-col>
+            <c-col [xs]="6">
+              <label cLabel> Status </label>
+              <select aria-label="Default select example" cSelect [(ngModel)]="designation.status" id="status"
+                name="status" required>
+                <option>select ...</option>
+                <option>Active</option>
+                <option>Deactive</option>
+                <option>Hold</option>
+              </select>
+            </c-col>
+          </c-row>
+          <c-modal-footer>
+            <button class="btn btn-success" type="submit" [disabled]="isSubmitting">Submit</button>
+            <button class="btn btn-warning" (click)="toggleLiveDemo()" cButton color="secondary">
+              Close
+            </button>
+          </c-modal-footer>
+        </form>
+      </c-card-body>
+    </c-modal>
+  </c-card-body>
+</c-card>

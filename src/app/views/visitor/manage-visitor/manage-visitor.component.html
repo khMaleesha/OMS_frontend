@@ -1,0 +1,83 @@
+<div class="fade-in">
+  <c-row>
+    <c-toaster class="p-3" position="fixed"></c-toaster>
+    <c-col [sm]="2">
+      <c-card class="mb-4 text-center text-white bg-info   ">
+        <c-card-body>
+          <h5 cCardTitle>1</h5>
+          <h5 cCardTitle>Pending</h5>
+        </c-card-body>
+      </c-card>
+    </c-col>
+    <c-col [lg]="12">
+      <c-card class="mb-6">
+        <c-card-header>
+          <strong>Approve Leave</strong>
+        </c-card-header>
+        <c-card-body>
+
+          <form cForm>
+            <table cTable>
+              <thead cTableColor="dark">
+                <tr>
+                  <th>ID</th>
+                  <th>Visitor Name</th>
+                  <th>Nic</th>
+                  <th>Email</th>
+                  <th>Contact Number</th>
+                  <th>Company/Address</th>
+                  <th>Host</th>
+                  <th>Date</th>
+                  <th>Time</th>
+                  <th>Purpose</th>
+                  <td>Status</td>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+
+                <tr *ngFor="let visitor of visitors">
+                  <td>{{visitor.visitorId}}</td>
+                  <td>{{visitor.name}}</td>
+                  <td>{{visitor.nic}}</td>
+                  <td>{{visitor.email}}</td>
+                  <td>
+                    {{visitor. contact}}
+                  </td>
+                  <td>{{visitor.company}}</td>
+                  <td>{{visitor.date}}</td>
+                  <td>{{visitor.host}}</td>
+                  <td>{{visitor.time}}</td>
+                  <td>{{visitor.purpose}}</td>
+                  <td>{{visitor.status}}</td>
+                  <td>
+                    <button cButton color="success" class="" (click)="approvelvisitor(visitor)">
+                      Approved</button> &nbsp;
+                  </td>
+                </tr>
+              </tbody>
+            </table><br>
+            <c-pagination aria-label="Page navigation example">
+              <li cPageItem>
+                <a cPageLink [routerLink]>Previous</a>
+              </li>
+              <li cPageItem>
+                <a cPageLink [routerLink]>1</a>
+              </li>
+              <li cPageItem>
+                <a cPageLink [routerLink]>2</a>
+              </li>
+              <li cPageItem>
+                <a cPageLink [routerLink]>3</a>
+              </li>
+              <li cPageItem>
+                <a cPageLink [routerLink]>Next</a>
+              </li>
+            </c-pagination>
+
+          </form>
+        </c-card-body>
+      </c-card>
+    </c-col>
+  </c-row>
+</div><br>

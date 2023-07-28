@@ -1,0 +1,61 @@
+<div class="fade-in">
+  <c-row>
+    <c-toaster class="p-3" position="fixed"></c-toaster>
+    <c-col [sm]="2">
+      <c-card class="mb-4 text-center text-white bg-info   ">
+
+      </c-card>
+    </c-col>
+    <c-col [lg]="12">
+      <c-card class="mb-6">
+        <c-card-header>
+          <strong>Approve Leave</strong>
+        </c-card-header>
+        <c-card-body>
+          <form cForm>
+            <table cTable>
+              <thead cTableColor="dark">
+                <tr>
+
+                  <th scope="col">Employee Number</th>
+                  <th scope="col">Employee Name</th>
+                  <th scope="col">Department</th>
+                  <th scope="col">Leave Type</th>
+                  <th scope="col">End Date</th>
+                  <th scope="col">Being Date</th>
+                  <th scope="col">Leave Qty</th>
+                  <th scope="col">Purpose</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let leave of leaves ">
+
+                  <td>{{ leave.employeeId.employeeId}}</td>
+                  <td>{{ leave.employeeId.employeeName}}</td>
+                  <td>{{ leave.employeeId.departmentId.departmentName}}</td>
+
+                  <td>{{ leave.beingDate}}</td>
+                  <td>{{ leave.endDate}}</td>
+                  <td>{{ leave.leaveType}}</td>
+                  <td>{{ leave.leaveQty}}</td>
+                  <td>{{ leave.purpose}}</td>
+                  <td>{{ leave.status}}</td>
+                  <td>
+                    <button cButton  [ngClass]="{
+                      red: leave.status==='F',
+                      green: leave.status==='T'
+                    }"(click)="approveleave(leave)">
+                    {{ leave.status==='T'?"Approved":"Approve"}}</button> &nbsp;
+                  </td>
+                </tr>
+                <tr>
+              </tbody>
+            </table>
+          </form>
+        </c-card-body>
+      </c-card>
+    </c-col>
+  </c-row>
+</div><br>

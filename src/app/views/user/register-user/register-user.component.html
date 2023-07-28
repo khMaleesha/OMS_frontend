@@ -1,0 +1,403 @@
+<div class="fade-in">
+  <c-row>
+      <c-toaster class="p-3" position="fixed"></c-toaster>
+      <c-col xs="100">
+          <c-card class="mb-6">
+              <c-card-header>
+                  <strong>Register User</strong>
+              </c-card-header>
+              <c-card-body>
+                  <form cForm>
+                      <c-col [xs]="6">
+                          <c-input-group class="g-1">
+                              <span cInputGroupText id="basic-addon1">Create User</span>
+                              <input aria-label="empname" cFormControl type="text" placeholder="">
+                              <button cButton class="cil-search" color="primary">Search</button>
+                              <!-- <svg cIcon class="me-1" name="cil-search"></svg> -->
+                          </c-input-group>
+                      </c-col>
+                      <hr>
+                      <c-row>
+                          <c-col>
+                              <label cLabel> Employee Number <span class="text-danger">*</span></label>
+                              <input aria-label="Disabled input example" cFormControl disabled type="text">
+                          </c-col>
+                          <c-col>
+                              <label cLabel> First Name <span class="text-danger">*</span></label>
+                              <input aria-label="Disabled input example" cFormControl disabled type="text">
+                          </c-col>
+                          <c-col>
+                              <label cLabel> Middle Name <span class="text-danger">*</span></label>
+                              <input aria-label="Disabled input example" cFormControl disabled type="text">
+                          </c-col>
+                      </c-row>
+                      <c-row>
+                          <c-col>
+                              <label cLabel> Contact Number<span class="text-danger">*</span></label>
+                              <input aria-label="Disabled input example" cFormControl disabled type="text">
+                          </c-col>
+                          <c-col>
+                              <label cLabel> Department <span class="text-danger">*</span></label>
+                              <input aria-label="Disabled input example" cFormControl disabled type="text">
+                          </c-col>
+                          <c-col>
+                              <label cLabel> Email Address <span class="text-danger">*</span></label>
+                              <input aria-label="empname" cFormControl type="text">
+                          </c-col>
+                      </c-row>
+                      <c-row>
+                          <c-col>
+                              <label cLabel> User Name <span class="text-danger">*</span></label>
+                              <input aria-label="empname" cFormControl type="text">
+                          </c-col>
+                          <c-col>
+                              <label cLabel> Password<span class="text-danger">*</span></label>
+                              <input aria-label="empname" cFormControl type="password">
+                          </c-col>
+                          <c-col>
+                              <label cLabel> Confirm Password <span class="text-danger">*</span></label>
+                              <input aria-label="empname" cFormControl type="password">
+                          </c-col>
+                      </c-row>
+                      <hr />
+                      <!-- Add permission table -->
+                      <c-card class="mb-6">
+                          <c-card-header class="card border-secondary  ">
+                              <strong>Action Permissions</strong>
+                          </c-card-header>
+                          <c-card-body class="card border-secondary  ">
+                              <ul class="no-bullets">
+                                  <c-form-check inline>
+                                      <input cFormCheckInput id="inline2" type="checkbox" />
+                                      <label cFormCheckLabel for="inline2"><b>All Permissions</b></label>
+                                  </c-form-check>
+                                  <li>
+                                      <c-form-check inline>
+                                          <input cFormCheckInput id="inline2" type="checkbox"><label for="option"><b>
+                                                  &nbsp;User</b></label>
+                                      </c-form-check>
+                                      <c-container>
+                                          <ul class="no-bullets">
+                                              <li>
+                                                  <c-row>
+                                                      <c-col>
+                                                          <c-form-check inline> <label><input cFormCheckInput
+                                                                      id="inline2" type="checkbox">&nbsp;Register
+                                                                  User</label></c-form-check>
+                                                      </c-col>
+                                                      <c-col>
+                                                          <label><input cFormCheckInput id="inline2" type="checkbox">
+                                                              Create</label>&nbsp;
+                                                          <label><input type="checkbox" cFormCheckInput>
+                                                              Edit</label>&nbsp;
+                                                          <label><input type="checkbox" cFormCheckInput>
+                                                              Delete</label>
+                                                      </c-col>
+                                                  </c-row>
+                                              </li>
+                                              <li>
+                                                  <c-row>
+                                                      <c-col><label><input type="checkbox" cFormCheckInput
+                                                                  id="inline2">&nbsp;Create User Type</label></c-col>
+                                                      <c-col>
+                                                          <label><input type="checkbox" cFormCheckInput id="inline2">
+                                                              Create</label>&nbsp;
+                                                          <label><input type="checkbox" cFormCheckInput id="inline2">
+                                                              Edit</label>&nbsp;
+                                                          <label><input type="checkbox" cFormCheckInput id="inline2">
+                                                              Delete</label>
+                                                      </c-col>
+                                                  </c-row>
+                                              </li>
+                                          </ul>
+                                      </c-container>
+                                  </li>
+                                  <li>
+                                      <input type="checkbox" cFormCheckInput id="inline2"><label for="option">
+                                          <b>&nbsp;Employee</b></label>
+                                      <c-container>
+                                          <ul class="no-bullets">
+                                              <li>
+                                                  <c-row>
+                                                      <c-col> <label><input type="checkbox" cFormCheckInput
+                                                                  id="inline2">&nbsp; Register Employee</label>
+                                                      </c-col>
+                                                      <c-col>
+                                                          <label><input type="checkbox" cFormCheckInput id="inline2">
+                                                              Create</label>&nbsp;
+                                                          <label><input type="checkbox" cFormCheckInput id="inline2">
+                                                              Edit</label>&nbsp;
+                                                          <label><input type="checkbox" cFormCheckInput id="inline2">
+                                                              Delete</label>
+                                                      </c-col>
+                                                  </c-row>
+                                              </li>
+                                              <li>
+                                                  <c-row>
+                                                      <c-col><label><input type="checkbox" cFormCheckInput
+                                                                  id="inline2">&nbsp; Create Designation</label>&nbsp;
+                                                      </c-col>
+                                                      <c-col>
+                                                          <label><input type="checkbox" cFormCheckInput id="inline2">
+                                                              Create</label>&nbsp;
+                                                          <label><input type="checkbox" cFormCheckInput id="inline2">
+                                                              Edit</label>&nbsp;
+                                                          <label><input type="checkbox" cFormCheckInput id="inline2">
+                                                              Delete</label>
+                                                      </c-col>
+                                                  </c-row>
+                                              </li>
+                                          </ul>
+                                      </c-container>
+                                  </li>
+                                  <li>
+                                      <input type="checkbox" cFormCheckInput id="inline2"><label
+                                          for="option">&nbsp;<b> Department</b></label>
+                                      <c-container>
+                                          <ul class="no-bullets">
+                                              <li>
+                                                  <c-row>
+                                                      <c-col> <label><input type="checkbox" cFormCheckInput
+                                                                  id="inline2">&nbsp; Create Department</label>
+                                                      </c-col>
+                                                      <c-col>
+                                                          <label><input type="checkbox" cFormCheckInput id="inline2">
+                                                              Create</label>&nbsp;
+                                                          <label><input type="checkbox" cFormCheckInput id="inline2">
+                                                              Edit</label>&nbsp;
+                                                          <label><input type="checkbox" cFormCheckInput id="inline2">
+                                                              Delete</label>
+                                                      </c-col>
+                                                  </c-row>
+                                              </li>
+                                          </ul>
+                                      </c-container>
+                                  </li>
+                                  <li>
+                                      <input type="checkbox" cFormCheckInput id="inline2"><label
+                                          for="option">&nbsp;<b> Device</b></label>
+                                      <c-container>
+                                          <ul class="no-bullets">
+                                              <li>
+                                                  <c-row>
+                                                      <c-col> <label><input type="checkbox" cFormCheckInput
+                                                                  id="inline2">&nbsp; Register Device</label>
+                                                      </c-col>
+                                                      <c-col>
+                                                          <label><input type="checkbox" cFormCheckInput id="inline2">
+                                                              Create</label>&nbsp;
+                                                          <label><input type="checkbox" cFormCheckInput id="inline2">
+                                                              Edit</label>&nbsp;
+                                                          <label><input type="checkbox" cFormCheckInput id="inline2">
+                                                              Delete</label>
+                                                      </c-col>
+                                                  </c-row>
+                                              </li>
+                                              <li>
+                                                  <c-row>
+                                                      <c-col> <label><input type="checkbox" cFormCheckInput
+                                                                  id="inline2">&nbsp; Hand Over Device</label>
+                                                      </c-col>
+                                                      <c-col>
+                                                          <label><input type="checkbox" cFormCheckInput id="inline2">
+                                                              Create</label>&nbsp;
+                                                          <label><input type="checkbox" cFormCheckInput id="inline2">
+                                                              Edit</label>&nbsp;
+                                                          <label><input type="checkbox" cFormCheckInput id="inline2">
+                                                              Delete</label>
+                                                      </c-col>
+                                                  </c-row>
+                                              </li>
+                                          </ul>
+                                      </c-container>
+                                  </li>
+                                  <li>
+                                      <input type="checkbox" cFormCheckInput id="inline2"><label
+                                          for="option">&nbsp;<b> Personal Gate Pass</b></label>
+                                      <c-container>
+                                          <ul class="no-bullets">
+                                              <li>
+                                                  <c-row>
+                                                      <c-col> <label><input type="checkbox" cFormCheckInput
+                                                                  id="inline2">&nbsp; Create Gate Pass</label>
+                                                      </c-col>
+                                                      <c-col>
+                                                          <label><input type="checkbox" cFormCheckInput id="inline2">
+                                                              Create</label>&nbsp;
+                                                          <label><input type="checkbox" cFormCheckInput id="inline2">
+                                                              Edit</label>&nbsp;
+                                                          <label><input type="checkbox" cFormCheckInput id="inline2">
+                                                              Delete</label>
+                                                      </c-col>
+                                                  </c-row>
+                                              </li>
+                                              <li>
+                                                  <c-row>
+                                                      <c-col> <label><input type="checkbox" cFormCheckInput
+                                                                  id="inline2">&nbsp; Approve Gate Pass</label>
+                                                      </c-col>
+                                                      <c-col>
+                                                          <label><input type="checkbox" cFormCheckInput id="inline2">
+                                                              Create</label>&nbsp;
+                                                          <label><input type="checkbox" cFormCheckInput id="inline2">
+                                                              Edit</label>
+                                                      </c-col>
+                                                  </c-row>
+                                              </li>
+                                              <li>
+                                                  <c-row>
+                                                      <c-col> <label><input type="checkbox" cFormCheckInput
+                                                                  id="inline2">&nbsp; Security Gate Pass</label>
+                                                      </c-col>
+                                                      <c-col>
+                                                          <label><input type="checkbox" cFormCheckInput id="inline2">
+                                                              Create</label>&nbsp;
+                                                          <label><input type="checkbox" cFormCheckInput id="inline2">
+                                                              Edit</label>
+                                                      </c-col>
+                                                  </c-row>
+                                              </li>
+                                          </ul>
+                                      </c-container>
+                                  </li>
+                                  <li>
+                                      <input type="checkbox" cFormCheckInput id="inline2"><label
+                                          for="option">&nbsp;<b> Metirial Gate Pass</b></label>
+                                      <c-container>
+                                          <ul class="no-bullets">
+                                              <li>
+                                                  <c-row>
+                                                      <c-col> <label><input type="checkbox" cFormCheckInput
+                                                                  id="inline2">&nbsp; Create Gate Pass</label>
+                                                      </c-col>
+                                                      <c-col>
+                                                          <label><input type="checkbox" cFormCheckInput id="inline2">
+                                                              Create</label>&nbsp;
+                                                          <label><input type="checkbox" cFormCheckInput id="inline2">
+                                                              Edit</label>&nbsp;
+                                                          <label><input type="checkbox" cFormCheckInput id="inline2">
+                                                              Delete</label>
+                                                      </c-col>
+                                                  </c-row>
+                                              </li>
+                                              <li>
+                                                  <c-row>
+                                                      <c-col> <label><input type="checkbox" cFormCheckInput
+                                                                  id="inline2">&nbsp; Confirm Gate Pass</label>
+                                                      </c-col>
+                                                      <c-col>
+                                                          <label><input type="checkbox" cFormCheckInput id="inline2">
+                                                              Create</label>&nbsp;
+                                                          <label><input type="checkbox" cFormCheckInput id="inline2">
+                                                              Edit</label>
+                                                      </c-col>
+                                                  </c-row>
+                                              </li>
+                                              <li>
+                                                  <c-row>
+                                                      <c-col> <label><input type="checkbox" cFormCheckInput
+                                                                  id="inline2">&nbsp; Approve Gate Pass</label>
+                                                      </c-col>
+                                                      <c-col>
+                                                          <label><input type="checkbox" cFormCheckInput id="inline2">
+                                                              Create</label>&nbsp;
+                                                          <label><input type="checkbox" cFormCheckInput id="inline2">
+                                                              Edit</label>
+                                                      </c-col>
+                                                  </c-row>
+                                              </li>
+                                              <li>
+                                                  <c-row>
+                                                      <c-col> <label><input type="checkbox" cFormCheckInput
+                                                                  id="inline2">&nbsp; Security Gate Pass</label>
+                                                      </c-col>
+                                                      <c-col>
+                                                          <label><input type="checkbox" cFormCheckInput id="inline2">
+                                                              Create</label>&nbsp;
+                                                          <label><input type="checkbox" cFormCheckInput id="inline2">
+                                                              Edit</label>
+                                                      </c-col>
+                                                  </c-row>
+                                              </li>
+                                              <li>
+                                                  <c-row>
+                                                      <c-col>
+                                                          <label><input type="checkbox" cFormCheckInput
+                                                                  id="inline2">&nbsp; Return Gate Pass</label>
+                                                      </c-col>
+                                                      <c-col>
+                                                          <label><input type="checkbox" cFormCheckInput id="inline2">
+                                                              Create</label>&nbsp;
+                                                          <label><input type="checkbox" cFormCheckInput id="inline2">
+                                                              Edit</label>
+                                                      </c-col>
+                                                  </c-row>
+                                              </li>
+                                              <li>
+                                                  <c-row>
+                                                      <c-col>
+                                                          <label><input type="checkbox" cFormCheckInput
+                                                                  id="inline2">&nbsp; Gate Pass Tracking</label>
+                                                      </c-col>
+                                                      <c-col>
+                                                          <label><input type="checkbox" cFormCheckInput id="inline2">
+                                                              Update</label>
+                                                      </c-col>
+                                                  </c-row>
+                                              </li>
+
+                                          </ul>
+                                      </c-container>
+                                  </li>
+                                  <li>
+                                      <input type="checkbox" cFormCheckInput id="inline2"><label
+                                          for="option">&nbsp;<b> Leave</b></label>
+                                      <c-container>
+                                          <ul class="no-bullets">
+                                              <li>
+                                                  <c-row>
+                                                      <c-col> <label><input type="checkbox" cFormCheckInput
+                                                                  id="inline2">&nbsp; Apply Leave</label>
+                                                      </c-col>
+                                                      <c-col>
+                                                          <label><input type="checkbox" cFormCheckInput id="inline2">
+                                                              Create</label>&nbsp;
+                                                          <label><input type="checkbox" cFormCheckInput id="inline2">
+                                                              Edit</label>&nbsp;
+                                                          <label><input type="checkbox" cFormCheckInput id="inline2">
+                                                              Delete</label>
+                                                      </c-col>
+                                                  </c-row>
+                                              </li>
+                                              <li>
+                                                  <c-row>
+                                                      <c-col> <label><input type="checkbox" cFormCheckInput
+                                                                  id="inline2">&nbsp; Approve leave</label>
+                                                      </c-col>
+                                                      <c-col>
+                                                          <label><input type="checkbox" cFormCheckInput id="inline2">
+                                                              Create</label>&nbsp;
+                                                          <label><input type="checkbox" cFormCheckInput id="inline2">
+                                                              Edit</label>
+
+                                                      </c-col>
+                                                  </c-row>
+                                              </li>
+                                          </ul>
+                                      </c-container>
+                                  </li>
+                              </ul>
+                          </c-card-body>
+                      </c-card><br>
+                      <c-row>
+                          <c-col class="d-flex justify-content-end">
+                              <button cButton class="me-1">Create</button>
+                              <button cButton color="danger">Clear</button>
+                          </c-col>
+                      </c-row>
+                  </form>
+              </c-card-body>
+          </c-card>
+      </c-col>
+  </c-row>
+</div>

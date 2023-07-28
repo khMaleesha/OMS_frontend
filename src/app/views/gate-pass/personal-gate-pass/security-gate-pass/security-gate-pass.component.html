@@ -1,0 +1,87 @@
+<div class="fade-in">
+  <c-row>
+    <c-toaster class="p-3" position="fixed"></c-toaster>
+    <c-col>
+      <c-card class="mb-6">
+        <c-card-body>
+          <c-input-group class="g-1" style="width: 30rem;">
+            <span cInputGroupText id="basic-addon1">Gate Pass Reference</span>
+            <input aria-label="empname" cFormControl type="text" [(ngModel)]="searchText" placement="right"
+              (keyup.enter)="searchEmploy()" placeholder="Employee No">
+            <button id="button1" (click)="searchEmploy()" cButton class="me-1" color="primary">Search</button>
+          </c-input-group>
+        </c-card-body>
+      </c-card>
+    </c-col>
+  </c-row>
+  <c-col>
+    <c-card [visible]="visible[0]" cCollapse class="mt-3">
+      <c-card-body>
+        <c-row class="g-3">
+          <c-col [xs]="6">
+
+            <strong><label cLabel for="inputEmail4">Gate Pass Reference:
+              </label></strong><label  style="color:blue">&emsp;{{personalgatepass.personalgatepassId}}</label><br>
+          </c-col>
+          <c-col [xs]="6">
+            <strong> <label cLabel for="inputEmail4">Employee Number :
+              </label></strong><label  style="color:blue">&emsp;{{employee.employeeId}}</label><br>
+          </c-col>
+        </c-row>
+        <c-row class="g-3">
+          <c-col [xs]="6">
+            <strong> <label cLabel for="inputEmail4">Employee Name: </label></strong><label  style="color:blue">&emsp;{{employee.employeeName}}
+              {{employee.secondName}} {{employee.surName}}</label><br>
+          </c-col>
+          <c-col [xs]="6">
+            <strong><label cLabel
+                for="inputEmail4">Type:</label></strong><label  style="color:blue">&emsp;{{personalgatepass.personalgatepassType}}</label><br>
+          </c-col>
+        </c-row>
+        <c-row class="g-3">
+          <c-col [xs]="6">
+            <strong> <label cLabel
+                for="inputEmail4">Date:</label></strong><label  style="color:blue">&emsp;{{personalgatepass.personalgatepassDate}}</label ><br>
+          </c-col>
+          <c-col [xs]="6">
+            <strong><label cLabel
+                for="inputEmail4">Department:</label></strong><label  style="color:blue">&emsp;{{employee.departmentId}}</label><br>
+          </c-col>
+        </c-row>
+        <c-row class="g-3">
+          <c-col [xs]="6">
+            <strong> <label cLabel for="inputEmail4">Purpose:</label></strong><label  style="color:blue">&emsp;{{personalgatepass.purpose}}</label><br>
+          </c-col>
+          <c-col [xs]="6">
+            <strong> <label cLabel for="inputEmail4">Status:</label></strong><label  style="color:blue">&emsp;{{personalgatepass.status}}</label><br>
+          </c-col>
+        </c-row><br>
+
+        <c-row class="g-3">
+
+          <c-col [xs]="3">
+            <label cLabel> Check out <span class="text-danger">*</span></label>
+            <input cFormControl type="time" class="form-control text-center" [(ngModel)]="personalgatepass.checkOut" >
+          </c-col>
+          <c-col [xs]="3"></c-col>
+          <c-col [xs]="3">
+            <label cLabel> Check IN <span class="text-danger">*</span></label>
+            <input cFormControl type="time" class="form-control text-center" [(ngModel)]="personalgatepass.checkIn" >
+          </c-col><br>
+        </c-row><br>
+
+        <c-col lg="3">
+          <label cLabel for="inputEmail4">Security Note :</label>
+          <textarea cFormControl id="exampleFormControlTextarea1" rows="3" [(ngModel)]="personalgatepass.securityNote" > </textarea>
+
+        </c-col>
+        <c-col lg="4">
+        </c-col>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+          <button cButton (click)="saveSecuritygatepass()" [disabled]="" class="me-1">Approve</button>
+          <button id="clear" cButton class="me-1" color="warning">Clear</button>
+        </div>
+      </c-card-body>
+    </c-card>
+  </c-col>
+</div>
